@@ -76,6 +76,31 @@ import 'package:particle_auth_core/particle_auth_core.dart';
 In particle-auth/example/lib/mock/transaction_mock.dart, We provide several examples that show how to structure transactions,
 how to read contract and write contract.
 
+### Run the Example
+
+1.  Navigate to the `particle-connect/example` directory.
+2.  Get your Project ID, Client Key, and App ID from the [Particle Network Dashboard](https://dashboard.particle.network/).
+3.  Update `particle-connect/example/android/app/build.gradle` with your credentials:
+
+    ```gradle
+    manifestPlaceholders["PN_PROJECT_ID"] = "YOUR_PROJECT_ID"
+    manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "YOUR_CLIENT_KEY"
+    manifestPlaceholders["PN_APP_ID"] = "YOUR_APP_ID"
+    ```
+
+4.  Update `particle-connect/example/lib/connect_demo/connect_logic.dart` with your credentials:
+
+    ```dart
+    const projectId = "YOUR_PROJECT_ID";
+    const clientK = "YOUR_CLIENT_KEY";
+    ```
+
+5.  Once the configuration is complete, run the following command in the `particle-connect/example` directory:
+
+    ```sh
+    flutter run
+    ```
+
 
 
 
