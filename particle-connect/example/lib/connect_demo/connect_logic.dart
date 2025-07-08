@@ -20,7 +20,7 @@ class ConnectLogic extends ChangeNotifier {
     }
   }
 
-  ChainInfo _currChainInfo = ChainInfo.Ethereum;
+  ChainInfo _currChainInfo = ChainInfo.Solana;
 
   ChainInfo get currChainInfo => _currChainInfo;
 

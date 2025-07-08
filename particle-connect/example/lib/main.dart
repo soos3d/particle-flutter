@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
+import 'package:particle_base/particle_base.dart';
+import 'package:particle_connect/particle_connect.dart';
 import 'package:particle_connect_example/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -186,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         floatingActionButton: SizedBox(
-          height: 150,
+          height: 300,
           child: Column(
             children: [
               Padding(
@@ -219,6 +221,36 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     icon: const Icon(Icons.add),
                     label: const Text('Connect'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: 150,
+                  child: FloatingActionButton.extended(
+                    heroTag: "loginWithGoogle",
+                    onPressed: () {
+                      Provider.of<ConnectLogic>(context, listen: false)
+                          .authCoreConnect(LoginType.google, null, []);
+                    },
+                    icon: const Icon(Icons.login),
+                    label: const Text('Google Login'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: 150,
+                  child: FloatingActionButton.extended(
+                    heroTag: "loginWithPhantom",
+                    onPressed: () {
+                      Provider.of<ConnectLogic>(context, listen: false)
+                          .connect(WalletType.phantom);
+                    },
+                    icon: const Icon(Icons.login),
+                    label: const Text('Phantom'),
                   ),
                 ),
               ),

@@ -15,7 +15,7 @@ class SelectChainPage extends StatefulWidget {
 }
 
 class SelectChainPageState extends State<SelectChainPage> {
-  List<ChainInfo> chainList = ChainInfo.getAllChains();
+  List<ChainInfo> chainList = ChainInfo.getAllChains().where((element) => element.name == "Solana").toList();
 
   @override
   Widget build(BuildContext context) {
