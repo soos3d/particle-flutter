@@ -1,16 +1,25 @@
 # particle_base_example
 
-Demonstrates how to use the particle_base plugin.
+An example Flutter application demonstrating the shared base utilities provided by the `particle_base` plugin.
 
-## Getting Started
+## Prerequisites
 
-This project is a starting point for a Flutter application.
+Before running this example, obtain your **Project ID**, **Client Key**, and **App ID** from the [Particle Network Dashboard](https://dashboard.particle.network/).
 
-A few resources to get you started if this is your first Flutter project:
+## Configuration
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Add your credentials to `android/app/build.gradle`:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ```gradle
+    manifestPlaceholders["PN_PROJECT_ID"] = "YOUR_PROJECT_ID"
+    manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "YOUR_CLIENT_KEY"
+    manifestPlaceholders["PN_APP_ID"] = "YOUR_APP_ID"
+    ```
+
+2. Add your credentials to the relevant Dart initialization file in `lib/`.
+
+## Running
+
+```sh
+flutter run
+```

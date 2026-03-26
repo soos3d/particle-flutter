@@ -1,15 +1,21 @@
 # particle_wallet
 
-A flutter plugin project for particle wallet
+A Flutter plugin for [Particle Network](https://particle.network) Wallet — an embedded wallet infrastructure for apps and wallets.
 
-## Getting Started
+`particle_wallet` is not a standalone wallet app. It is a wallet UI layer that can be embedded directly into your application, giving users a complete asset management experience without leaving your app.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter pub add particle_wallet
+```
 
+## Usage
+
+```dart
+import 'package:particle_wallet/particle_wallet.dart';
+```
+
+## Documentation
+
+Full API reference and integration guides are available in the [Particle Wallet Flutter Doc](https://developers.particle.network/api-reference/connect/mobile/flutter).

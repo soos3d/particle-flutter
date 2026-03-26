@@ -1,15 +1,23 @@
 # particle_auth_core
 
-A new Flutter plugin project.
+A Flutter plugin for [Particle Network](https://particle.network) Auth Core — a self-custodial authentication infrastructure for Web3 apps and wallets.
 
-## Getting Started
+## iOS Note
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+This plugin supports **ios-arm64 (physical devices) only**. iOS simulators are not supported. Testing requires an actual iPhone device.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
 
+```sh
+flutter pub add particle_auth_core
+```
+
+## Usage
+
+```dart
+import 'package:particle_auth_core/particle_auth_core.dart';
+```
+
+## Documentation
+
+Full API reference and integration guides are available in the [Particle Auth Core Flutter Doc](https://developers.particle.network/api-reference/auth/mobile-sdks/flutter).

@@ -1,16 +1,27 @@
 # particle_auth_core_example
 
-Demonstrates how to use the particle_auth_core plugin.
+An example Flutter application demonstrating how to integrate and use the `particle_auth_core` plugin for self-custodial Web3 authentication.
 
-## Getting Started
+> **iOS Note:** `particle_auth_core` supports physical iOS devices only (ios-arm64). Simulators are not supported.
 
-This project is a starting point for a Flutter application.
+## Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+Before running this example, obtain your **Project ID**, **Client Key**, and **App ID** from the [Particle Network Dashboard](https://dashboard.particle.network/).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Configuration
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Add your credentials to `android/app/build.gradle`:
+
+    ```gradle
+    manifestPlaceholders["PN_PROJECT_ID"] = "YOUR_PROJECT_ID"
+    manifestPlaceholders["PN_PROJECT_CLIENT_KEY"] = "YOUR_CLIENT_KEY"
+    manifestPlaceholders["PN_APP_ID"] = "YOUR_APP_ID"
+    ```
+
+2. Add your credentials to the relevant Dart initialization file in `lib/`.
+
+## Running
+
+```sh
+flutter run
+```
