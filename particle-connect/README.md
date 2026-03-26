@@ -1,15 +1,21 @@
 # particle_connect
 
-A flutter plugin project for particle connect
+A Flutter plugin for [Particle Network](https://particle.network) Connect — the recommended way to onboard any user into your dApp.
 
-## Getting Started
+This plugin provides a unified wallet connection interface, supporting social logins, email/phone authentication, and external wallets (MetaMask, Phantom, WalletConnect, and more) through a single API.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter pub add particle_connect
+```
 
+## Usage
+
+```dart
+import 'package:particle_connect/particle_connect.dart';
+```
+
+## Documentation
+
+Full API reference and integration guides are available in the [Particle Connect Flutter Doc](https://developers.particle.network/api-reference/connect/mobile/flutter).

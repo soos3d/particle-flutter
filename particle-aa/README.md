@@ -1,15 +1,21 @@
 # particle_aa
 
-A flutter plugin project for particle aa
+A Flutter plugin for [Particle Network](https://particle.network) Account Abstraction support.
 
-## Getting Started
+This plugin enables ERC-4337 Account Abstraction in your Flutter app, allowing you to send user operations, manage smart accounts, and leverage paymasters for gasless transactions.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter pub add particle_aa
+```
 
+## Usage
+
+```dart
+import 'package:particle_aa/particle_aa.dart';
+```
+
+## Documentation
+
+Full API reference and integration guides are available in the [Particle AA Flutter Doc](https://developers.particle.network/api-reference/aa/sdks/mobile/flutter).

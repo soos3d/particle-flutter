@@ -1,15 +1,21 @@
 # particle_base
 
-A flutter plugin project for particle base
+A Flutter plugin providing shared base utilities for [Particle Network](https://particle.network) Flutter SDKs.
 
-## Getting Started
+This package contains common types, interfaces, and helpers used by `particle_auth_core`, `particle_connect`, `particle_wallet`, and `particle_aa`. It is typically pulled in automatically as a dependency — you do not need to add it directly unless you are building on top of the Particle SDK primitives.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter pub add particle_base
+```
 
+## Usage
+
+```dart
+import 'package:particle_base/particle_base.dart';
+```
+
+## Documentation
+
+For more information, see the [Particle Network Developer Docs](https://developers.particle.network).

@@ -1,86 +1,56 @@
 # Particle Flutter SDKs
 
-![](https://img.shields.io/pub/v/particle_base?color=blue&style=round) 
+![pub version](https://img.shields.io/pub/v/particle_base?color=blue&style=round)
 
-<img width="420" src="/images/connectkit-mobile.svg"></img>
+<img width="420" src="/images/connectkit-mobile.svg">
+
+A collection of Flutter plugins for integrating Particle Network's authentication, wallet connection, embedded wallet, and account abstraction features into mobile apps.
+
+## Packages
+
+| Package | Description | Docs |
+|---|---|---|
+| `particle_auth_core` | Self-custodial authentication infrastructure for Web3 apps and wallets | [Auth Core Doc](https://developers.particle.network/api-reference/auth/mobile-sdks/flutter) |
+| `particle_connect` | Wallet connection and user onboarding for dApps | [Connect Doc](https://developers.particle.network/api-reference/connect/mobile/flutter) |
+| `particle_wallet` | Embedded wallet infrastructure for apps and wallets | [Wallet Doc](https://developers.particle.network/api-reference/connect/mobile/flutter) |
+| `particle_aa` | Account Abstraction support | [AA Doc](https://developers.particle.network/api-reference/aa/sdks/mobile/flutter) |
+| `particle_base` | Shared base utilities used by all Particle plugins | — |
 
 ## Upgrade Guide
-If you are using 1.4.x, please review this [Upgrade Guide](https://github.com/Particle-Network/particle-flutter/blob/master/UpgradeGuide.md) from 1.4.x to 1.5.x 
 
-### Note For iOS
-Please note that the SDK `particle_auth_core` only supports ios-arm64 (iOS devices), does not support simulators, to perform testing, you will require an actual iPhone device.
+If you are upgrading from 1.4.x, please review the [Upgrade Guide](https://github.com/Particle-Network/particle-flutter/blob/master/UpgradeGuide.md) before proceeding.
 
-Particle Auth Core is a simple self-custodial auth infra for Web3 apps and wallets.
+## iOS Notes
 
-Particle Connect is the best way to onboard any user for your dApp.
+`particle_auth_core` supports **ios-arm64 (physical devices) only** — iOS simulators are not supported. Testing requires an actual iPhone device.
 
-Particle Wallet is not an independent wallet—it is a wallet infrastructure plugged into apps or wallets.
+When using CocoaPods on iOS, pin all pod versions in your `Podfile`. Refer to the native iOS repositories for the latest versions: [particle-ios](https://github.com/Particle-Network/particle-ios) and [particle-connect-ios](https://github.com/Particle-Network/particle-connect-ios).
 
-Particle AA support Account Abstraction
+## Installation
 
-## iOS Cocoapods requires
+Add the packages you need to your Flutter project:
 
-Specify all pod versions in your Podfile, get the lateset versions from iOS native  [particle-ios](https://github.com/Particle-Network/particle-ios) and [particle-connect](https://github.com/Particle-Network/particle-connect-ios)
-
-
-## Getting Started 
-
-[Auth Doc](https://developers.particle.network/api-reference/auth/mobile-sdks/flutter)
-
-### Use this package as a library
-
-Depend on it
-
-Run this command:
-
-
-Import Connect and Wallet SDKs using the same method
-
-[Connect Doc](https://developers.particle.network/api-reference/connect/mobile/flutter)
-
-```
+```sh
+flutter pub add particle_auth_core
 flutter pub add particle_connect
-```
-```
-import 'package:particle_connect/particle_connect.dart';
-```
-
-[Wallet Doc](https://developers.particle.network/api-reference/connect/mobile/flutter)
-```
 flutter pub add particle_wallet
-```
-```
-import 'package:particle_wallet/particle_wallet.dart';
-```
-
-[AA Doc](https://developers.particle.network/api-reference/aa/sdks/mobile/flutter)
-```
 flutter pub add particle_aa
 ```
-```
+
+Then import them in your Dart code:
+
+```dart
+import 'package:particle_auth_core/particle_auth_core.dart';
+import 'package:particle_connect/particle_connect.dart';
+import 'package:particle_wallet/particle_wallet.dart';
 import 'package:particle_aa/particle_aa.dart';
 ```
 
-[Auth Core Doc](https://developers.particle.network/api-reference/auth/mobile-sdks/flutter)
+## Running the Example
 
-Please note that the `particle_auth_core` supports ios-arm64 (iOS devices). We currently do not support simulators. To perform testing, you will require an actual iPhone device.
-
-```
-flutter pub add particle_auth_core
-```
-```
-import 'package:particle_auth_core/particle_auth_core.dart';
-```
-
-### Structure Transaction
-In particle-auth/example/lib/mock/transaction_mock.dart, We provide several examples that show how to structure transactions,
-how to read contract and write contract.
-
-### Run the Example
-
-1.  Navigate to the `particle-connect/example` directory.
-2.  Get your Project ID, Client Key, and App ID from the [Particle Network Dashboard](https://dashboard.particle.network/).
-3.  Update `particle-connect/example/android/app/build.gradle` with your credentials:
+1. Navigate to the `particle-connect/example` directory.
+2. Obtain your **Project ID**, **Client Key**, and **App ID** from the [Particle Network Dashboard](https://dashboard.particle.network/).
+3. Add your credentials to `particle-connect/example/android/app/build.gradle`:
 
     ```gradle
     manifestPlaceholders["PN_PROJECT_ID"] = "YOUR_PROJECT_ID"
@@ -88,19 +58,17 @@ how to read contract and write contract.
     manifestPlaceholders["PN_APP_ID"] = "YOUR_APP_ID"
     ```
 
-4.  Update `particle-connect/example/lib/connect_demo/connect_logic.dart` with your credentials:
+4. Add your credentials to `particle-connect/example/lib/connect_demo/connect_logic.dart`:
 
     ```dart
     const projectId = "YOUR_PROJECT_ID";
     const clientK = "YOUR_CLIENT_KEY";
     ```
 
-5.  Once the configuration is complete, run the following command in the `particle-connect/example` directory:
+5. Run the app:
 
     ```sh
     flutter run
     ```
 
-
-
-
+For transaction structuring examples (including contract reads and writes), see `particle-auth/example/lib/mock/transaction_mock.dart`.
